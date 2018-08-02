@@ -1,0 +1,7 @@
+yum install https://packages.chef.io/files/stable/chef-server/12.17.33/el/7/chef-server-core-12.17.33-1.el7.x86_64.rpm -y
+chef-server-ctl reconfigure
+chef-server-ctl user-create admin Admin User adminuser@student.com 'admin@123' --filename /opt/admin-user.pem
+chef-server-ctl org-create student 'Student Services' --association_user admin --filename /opt/student-org.pem
+chef-server-ctl install chef-manage
+chef-server-ctl reconfigure
+chef-manage-ctl reconfigure
