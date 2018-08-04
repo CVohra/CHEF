@@ -1,0 +1,44 @@
+  443  knife
+  444  knife node list
+  445  knife ssl fetch
+  446  knife node list
+  478  knife node list
+  481  knife cookbook
+  488  knife cookbook upload demo1
+  489  knife cookbook list
+  494  knife bootstrap
+  495  knife bootstrap kjnsdks
+  496  knife bootstrap --help
+  497  knife bootstrap chef-node1 --ssh-identity-file=../devops.pem --sudo -N chef-node1
+  498  knife bootstrap ec2-user@chef-node1 --ssh-identity-file=../devops.pem --sudo -N chef-node1
+  499  knife node list
+  501  knife node list
+  502  knife bootstrap ec2-user@chef-node1 --ssh-identity-file=../devops.pem --sudo -N chef-node1
+  503  knife 
+  523  knife bootstrap ec2-user@server1 --ssh-identity-file=../devops.pem --sudo -N chef-node1
+  524  knife bootstrap ec2-user@server1 --ssh-identity-file=../devops.pem --sudo -N server1
+  525  knife node list
+  526  knife node 
+  527  knife node delete server1
+  528  knife node delete chef-node1
+  536  knife bootstrap ec2-user@instance-1 --ssh-identity-file=../devops.pem --sudo -N instance-1
+  537  knife node list
+  538  knife node show chef-node1
+  539  knife node show --help
+  540  knife node show chef-node1 -l
+  541  knife status
+  542  knife status -h
+  543  knife cookbook kist
+  544  knife cookbook list
+  545  knife node run_list 
+  546  knife node run_list set chef-node1 recipe[demom1]
+  547  knife node run_list set chef-node1 recipe[demo1]
+  559  knife cookbook upload stack
+  560  knife node run_list set chef-node1 recipe[stack::dbservice]
+  561  knife cookbook upload stack
+  569  knife cookbook upload stack
+  574  knife cookbook upload stack
+  576  knife cookbook upload stack
+  578  knife cookbook upload stack
+  580  knife cookbook upload stack
+  587  history | grep knife >chef-commands
