@@ -13,5 +13,10 @@ sed -i -e "$ a environment \"$ENV\"" /etc/chef/client.rb
 if [ $ENV == staging ]; then 
 	chef-client -o recipe[stack] &>>/tmp/chef.log
 else
-	chef-client -o recipe[stack::appserver],recipe[stack::webserver] &>>/tmp/chef.log
+        if [ $(hostname | cut -c 7-9) == 'app' ]; then 
+            chef-client -o recipe[stack::appserver],recipe[stack::webserver] &>>/tmp/chef.log
+        elif [ $(hostname | cut -c 7-9) == 'dbs' ]; then 
+            chef-client -o recipe[stack::dbserver]
+	fi
+      
 fi
