@@ -11,7 +11,7 @@ fi
 sed -i -e "/node_name/ c node_name \"$NAME\" " /etc/chef/client.rb
 sed -i -e "$ a environment \"$ENV\"" /etc/chef/client.rb
 if [ $ENV == staging ]; then 
-	chef-client -o recipe[stack]
+	chef-client -o recipe[stack] &>>/tmp/chef.log
 else
-	chef-client -o recipe[stack::appserver],recipe[stack::webserver]
+	chef-client -o recipe[stack::appserver],recipe[stack::webserver] &>>/tmp/chef.log
 fi
