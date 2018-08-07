@@ -14,9 +14,9 @@ if [ $ENV == staging ]; then
 	chef-client -o recipe[stack] &>>/tmp/chef.log
 else
         if [ $(hostname | cut -c 7-9) == 'app' ]; then 
-            chef-client -o recipe[stack::appserver],recipe[stack::webserver] &>>/tmp/chef.log
+            chef-client -o recipe[stack::appservice],recipe[stack::webservice] &>>/tmp/chef.log
         elif [ $(hostname | cut -c 7-9) == 'dbs' ]; then 
-            chef-client -o recipe[stack::dbserver]
+            chef-client -o recipe[stack::dbservice]
 	fi
       
 fi
