@@ -1,5 +1,3 @@
-#
-# Cookbook:: stack
-# Recipe:: default
-#
-# Copyright:: 2018, The Authors, All Rights Reserved.
+include_recipe 'stack::dbservice'
+include_recipe 'stack::appservice'
+include_recipe 'stack::webservice'
